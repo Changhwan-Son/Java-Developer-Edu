@@ -16,9 +16,21 @@ package kr.co.son.assignment1;
  */
 public class CoffeeMachine {
 	
-	private Liquid liquid;
-	private Bean bean;
+	// has - a 관계 
+	// 클래스의 멤버변수 형태로 존재 
+	// 부품의 개념으로 접근 
 	
+	// use - a 관계 
+	// 메소드의 매개변수 형태로 존재 
+	// 특정 메소드가 실행될 때마다 받아와야 한다. 
+	
+
+	
+	// 이렇게 하면 커피머신을 커피를 만들 때마다 새로 장만해야 한다는 의미
+	/*
+	private Liquid liquid;
+	private Bean bean; 
+	 
 	public CoffeeMachine(Liquid liquid, Bean bean) {
 		this.liquid = liquid;
 		this.bean = bean;
@@ -40,7 +52,22 @@ public class CoffeeMachine {
 		else if(liquid instanceof Milk)
 			System.out.println("라떼에요.");
 	}
+	*/
 	
+	
+	// 커피머신이라는 존재는 한대만 장만하고 필요에 따라서 (커피를 만들 때마다) 원두랑 액체를 바꿀 수 있게 해야한다. 
+	
+	public void makeCoffee(Liquid liquid, Bean bean) {
+		if(bean instanceof AABean)
+			System.out.print("AA 원두를 사용한 ");
+		else if(bean instanceof BBBean)
+			System.out.print("BB 원두를 사용한 ");
+		
+		if(liquid instanceof Water)
+			System.out.println("아메리카노에요.");
+		else if(liquid instanceof Milk)
+			System.out.println("라떼에요.");
+	}
 }
 
 
